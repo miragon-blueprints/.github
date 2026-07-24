@@ -11,7 +11,7 @@ Want a blueprint tailored to your stack? We'll adapt one with you — or build t
 
 ## Starting something new?
 
-Kicking off a greenfield project, or unsure how to set a tool up the right way? Grab a blueprint and go. And if you'd rather not go it alone, we're happy to jump in — as consultants and enablers, hands-on in your development, or with focused workshops and trainings that bring your team up to speed on the tools and practices behind these blueprints.
+Kicking off a greenfield project, or unsure how to set a tool up the right way? Grab a blueprint and go. And if you'd rather not go it alone, we're happy to jump in — hands-on in your development, or with focused workshops and trainings on the tools and practices behind these blueprints.
 
 - 📩 **[Get in touch](https://www.miragon.io/kontakt)** — and set up your next project the safe way from day one
 
