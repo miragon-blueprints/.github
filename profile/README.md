@@ -17,6 +17,6 @@ Kicking off a greenfield project, or unsure how to set a tool up the right way? 
 
 ## Get involved
 
-These blueprints come from [Miragon](https://www.miragon.io) — process automation, Camunda consulting, and open source tooling from Augsburg, Germany. If you want to find out more, visit [miragon.io](https://www.miragon.io).
+These blueprints come from [Miragon](https://www.miragon.io). If you want to find out more about us, visit [miragon.io](https://www.miragon.io).
 
 📍 Augsburg, Germany · 💼 [Careers](https://www.miragon.io/karriere) · 🔗 [LinkedIn](https://www.linkedin.com/company/miragon-io)
