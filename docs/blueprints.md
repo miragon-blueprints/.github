@@ -38,6 +38,8 @@ graph LR
   fullstack_example --> cibseven_process_engine_api_example["cibseven-process-engine-api-example"]
   fullstack_example --> cibseven_remote_example["cibseven-remote-example"]
   fullstack_example --> operaton_embedded_example["operaton-embedded-example"]
+  fullstack_example --> operaton_process_engine_api_example["operaton-process-engine-api-example"]
+  fullstack_example --> operaton_remote_example["operaton-remote-example"]
   fullstack_example --> zeebe_example["zeebe-example"]
   classDef ref fill:#1f6feb,stroke:#1f6feb,color:#fff
 ```
@@ -51,6 +53,8 @@ graph LR
 | [`cibseven-process-engine-api-example`](https://github.com/miragon-blueprints/cibseven-process-engine-api-example) | A ready-to-fork bike-leasing blueprint on CIB seven with an embedded engine, wired through the bpm-crafters process-engine-api — one complete, production-shaped BPMN service in Spring Boot & Kotlin 🚲 |
 | [`cibseven-remote-example`](https://github.com/miragon-blueprints/cibseven-remote-example) | A ready-to-fork bike-leasing blueprint on CIB seven with a remote engine — a generic engine host plus a worker that owns the model and runs its logic as external tasks, in Spring Boot & Kotlin 🚲 |
 | [`operaton-embedded-example`](https://github.com/miragon-blueprints/operaton-embedded-example) | A ready-to-fork bike-leasing blueprint for automating a business process on Operaton with an embedded engine, Spring Boot & Kotlin 🚲 |
+| [`operaton-process-engine-api-example`](https://github.com/miragon-blueprints/operaton-process-engine-api-example) | A ready-to-fork bike-leasing blueprint on Operaton with an embedded engine, wired through the bpm-crafters process-engine-api — one complete, production-shaped BPMN service in Spring Boot & Kotlin 🚲 |
+| [`operaton-remote-example`](https://github.com/miragon-blueprints/operaton-remote-example) | A ready-to-fork bike-leasing blueprint on Operaton with a remote engine — a generic engine host plus a worker that owns the model and runs its logic as external tasks, in Spring Boot & Kotlin 🚲 |
 | [`zeebe-example`](https://github.com/miragon-blueprints/zeebe-example) | A ready-to-fork bike-leasing blueprint for automating a business process on Zeebe / Camunda 8 with Spring Boot & Kotlin 🚲 |
 <!-- END:landscape -->
 
