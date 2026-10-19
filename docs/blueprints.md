@@ -39,6 +39,7 @@ graph LR
   fullstack_example --> cibseven_embedded_example["cibseven-embedded-example"]
   fullstack_example --> cibseven_process_engine_api_example["cibseven-process-engine-api-example"]
   fullstack_example --> cibseven_remote_example["cibseven-remote-example"]
+  fullstack_example --> miragon_ai_example["miragon-ai-example"]
   fullstack_example --> operaton_embedded_example["operaton-embedded-example"]
   fullstack_example --> operaton_process_engine_api_example["operaton-process-engine-api-example"]
   fullstack_example --> operaton_remote_example["operaton-remote-example"]
@@ -54,6 +55,7 @@ graph LR
 | [`cibseven-embedded-example`](https://github.com/miragon-blueprints/cibseven-embedded-example) | A ready-to-fork bike-leasing blueprint on CIB seven with an embedded engine — one complete, production-shaped BPMN service using JavaDelegates, Spring Boot & Kotlin 🚲 |
 | [`cibseven-process-engine-api-example`](https://github.com/miragon-blueprints/cibseven-process-engine-api-example) | A ready-to-fork bike-leasing blueprint on CIB seven with an embedded engine, wired through the bpm-crafters process-engine-api — one complete, production-shaped BPMN service in Spring Boot & Kotlin 🚲 |
 | [`cibseven-remote-example`](https://github.com/miragon-blueprints/cibseven-remote-example) | A ready-to-fork bike-leasing blueprint on CIB seven with a remote engine — a generic engine host plus a worker that owns the model and runs its logic as external tasks, in Spring Boot & Kotlin 🚲 |
+| [`miragon-ai-example`](https://github.com/miragon-blueprints/miragon-ai-example) | A ready-to-fork bike-leasing blueprint on CIB seven, automated end to end with AI agents — an embedded engine behind a hexagonal architecture in Spring Boot & Kotlin, a React front- and back-office, and design artifacts for designIQ 🚲 |
 | [`operaton-embedded-example`](https://github.com/miragon-blueprints/operaton-embedded-example) | A ready-to-fork bike-leasing blueprint for automating a business process on Operaton with an embedded engine, Spring Boot & Kotlin 🚲 |
 | [`operaton-process-engine-api-example`](https://github.com/miragon-blueprints/operaton-process-engine-api-example) | A ready-to-fork bike-leasing blueprint on Operaton with an embedded engine, wired through the bpm-crafters process-engine-api — one complete, production-shaped BPMN service in Spring Boot & Kotlin 🚲 |
 | [`operaton-remote-example`](https://github.com/miragon-blueprints/operaton-remote-example) | A ready-to-fork bike-leasing blueprint on Operaton with a remote engine — a generic engine host plus a worker that owns the model and runs its logic as external tasks, in Spring Boot & Kotlin 🚲 |
