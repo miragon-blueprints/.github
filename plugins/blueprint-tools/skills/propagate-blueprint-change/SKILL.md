@@ -1,6 +1,6 @@
 ---
 name: propagate-blueprint-change
-description: Propagate a change from one miragon blueprint to the rest of the family. Takes a source PR or issue, evaluates for every other blueprint whether the change applies, applies with engine-specific adaptation, or does not apply, and — after explicit confirmation — opens tracking issues in the affected repos that reference the source. Never edits code in other repos and refuses to run without a source PR/issue. Trigger when the user wants to propagate or sync a change across blueprints, asks whether a change also applies to the other blueprints, or wants issues for the other blueprints.
+description: Propagate a change from one miragon blueprint to the rest of the family. Takes a source PR or issue, evaluates for every other blueprint whether the change applies, applies with engine-specific adaptation, or does not apply, and — after explicit confirmation — opens tracking issues in the affected repos that reference the source, or comments the missing part onto an existing issue that already covers most of it. Never edits code in other repos and refuses to run without a source PR/issue. Trigger when the user wants to propagate or sync a change across blueprints, asks whether a change also applies to the other blueprints, or wants issues for the other blueprints.
 ---
 
 # Propagate a blueprint change
@@ -34,18 +34,22 @@ For every target, check whether the touched files and concepts exist there — `
 - `adapt` — it applies, but engine-specific parts differ; name them.
 - `not-applicable` — e.g. engine-specific to the source, or the affected code does not exist in the target.
 
-## 4. Skip duplicates
-For each `applies`/`adapt` target:
+## 4. Check existing issues
+For each `applies`/`adapt` target, search open issues by source and by topic:
 ```
 gh issue list -R miragon-blueprints/<repo> --state all --search "<source URL>"
+gh issue list -R miragon-blueprints/<repo> --state open --search "<key terms of the change>"
 ```
-If an issue already references the source, list it and drop the target from the proposal.
+Decide per target:
+- **Duplicate** — an issue already covers the change completely: list it, propose nothing.
+- **Partial overlap** — an issue covers most of it but misses something: propose a **comment** on that issue instead of a new one, containing only the missing delta plus the source link.
+- **None** — propose a new issue.
 
 ## 5. Propose and confirm (AskUserQuestion)
-Show a table `repo | verdict | reason | proposed issue title`, followed by the draft of each issue. Then use **AskUserQuestion** with `multiSelect` to let the user pick which issues to create. Create nothing the user did not select.
+Show a table `repo | verdict | action (new issue / comment on #n / skip) | reason`, followed by the draft of each issue or comment. Then use **AskUserQuestion** with `multiSelect` to let the user pick which actions to run. Run nothing the user did not select.
 
-## 6. Create the issues
-Write issues in English.
+## 6. Create the issues and comments
+Write in English and keep it compact — only what the target repo needs, no restating of the source diff.
 - Title: `<type>: <summary> (from <source-repo>#<n>)`, with `<type>` a conventional-commit type (`feat`, `fix`, `refactor`, `chore`, `docs`, …).
 - Body:
   ```
@@ -63,11 +67,12 @@ Write issues in English.
 - Label `blueprint-sync`. If the repo lacks it, create it first — only in repos the user confirmed:
   `gh label create blueprint-sync -R miragon-blueprints/<repo> --color 1f6feb --description "Change propagated from another blueprint"`
 - `gh issue create -R miragon-blueprints/<repo> --title "<title>" --label blueprint-sync --body-file <file>`
+- Comments on partially overlapping issues: `Also covers <source URL>:` followed by a short bullet list of the missing delta — `gh issue comment <n> -R miragon-blueprints/<repo> --body-file <file>`.
 
 ## 7. Link back
-Post **one** comment on the source PR/issue listing every created issue (`gh pr comment` / `gh issue comment`), so the references run both ways. Finish with the list of created issue URLs and the targets judged `not-applicable`.
+Post **one** comment on the source PR/issue listing every created issue and commented issue (`gh pr comment` / `gh issue comment`), so the references run both ways. Finish with those URLs and the targets judged `not-applicable` or duplicate.
 
 ## Never
-- Never edit, commit, push or open PRs in another blueprint — this skill only creates issues there.
-- Never create an issue without the user's selection in step 5.
+- Never edit, commit, push or open PRs in another blueprint — this skill only creates issues and issue comments there.
+- Never create an issue or comment without the user's selection in step 5.
 - Never run without a source PR or issue.
