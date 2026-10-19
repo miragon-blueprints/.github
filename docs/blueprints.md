@@ -20,6 +20,8 @@ Because the variants inherit from the reference, changes flow **downstream**:
 
 1. Land domain, architecture, scenario or tooling changes in `fullstack-example` **first**.
 2. Propagate them into the engine variants, adapting only the engine-specific parts.
+   Run `/blueprint-tools:propagate-blueprint-change` on the source PR — it opens a linked
+   `blueprint-sync` issue in every variant the change applies to (see [`plugins/blueprint-tools`](../plugins/blueprint-tools/)).
 3. Keep engine-specific concerns (worker wiring, delegate style, broker config) local to each variant.
 
 **Long-term goal:** replace the manual propagation in step 2 with **pipelines** that push shared

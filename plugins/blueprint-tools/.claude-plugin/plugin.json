@@ -1,0 +1,10 @@
+{
+  "name": "blueprint-tools",
+  "description": "Skills for keeping the miragon blueprints in sync — propagating changes across the family and more.",
+  "version": "0.1.0",
+  "author": {
+    "name": "miragon-blueprints"
+  },
+  "repository": "https://github.com/miragon-blueprints/.github",
+  "license": "MIT"
+}
