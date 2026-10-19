@@ -1,0 +1,16 @@
+{
+  "name": "miragon-blueprints",
+  "owner": {
+    "name": "miragon-blueprints"
+  },
+  "metadata": {
+    "description": "Claude Code plugins for maintaining the miragon-blueprints repositories."
+  },
+  "plugins": [
+    {
+      "name": "blueprint-tools",
+      "source": "./plugins/blueprint-tools",
+      "description": "Skills for keeping the miragon blueprints in sync — propagating changes across the family and more."
+    }
+  ]
+}
